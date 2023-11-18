@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/navbar/Navbar'
+import Model from './components/modals/Model'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
+        <Model isOpen />
         <Navbar />
+
         {children}
       </body>
     </html>
