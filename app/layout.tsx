@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Model isOpen />
+        <Model actionLabel='Submit' isOpen />
         <Navbar />
 
         {children}
