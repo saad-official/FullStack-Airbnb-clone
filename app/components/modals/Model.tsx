@@ -101,6 +101,7 @@ const Model = ({
 
                 <Button onClick={handleSubmit} label={actionLabel} />
               </div>
+              {footer}
             </div>
           </div>
         </div>
