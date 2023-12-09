@@ -85,7 +85,7 @@ const Model = ({
                 <IoMdClose size={18} />
               </button>
 
-              <div className="font-semibold text-lg">hello world</div>
+              <div className="font-semibold text-lg">{title}</div>
             </div>
 
             {/* Body */}
