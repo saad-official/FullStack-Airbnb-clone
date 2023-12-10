@@ -13,7 +13,6 @@ interface NavbarProps {
 
 
 const Navbar = ({ currentUser }: NavbarProps) => {
-  console.log("user", currentUser);
   return (
     <div className='fixed w-full shadow-sm bg-white z-10'>
      
@@ -22,7 +21,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
           <div className="flex flex-row item-center justify-between gap-3 md:gap-0">
             <Logo />
             <Search />
-            <UserMenu />
+            <UserMenu currentUser={currentUser} />
         </div>
         </Container>
     </div>
