@@ -5,6 +5,7 @@ import  Logo  from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
 import { User } from '@prisma/client'
+import Categories from './Categories'
 
 interface NavbarProps {
   currentUser?: User | null;
@@ -24,7 +25,8 @@ const Navbar = ({ currentUser }: NavbarProps) => {
             <UserMenu currentUser={currentUser} />
         </div>
         </Container>
-    </div>
+      </div>
+      <Categories />
     </div>
   )
 }

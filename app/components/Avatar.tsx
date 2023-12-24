@@ -2,10 +2,14 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Avatar = () => {
+interface AvatorType {
+  src: string | null | undefined
+}
+
+const Avatar = ({src}: AvatorType) => {
   return (
       <Image
-          src="/images/placeholder.jpg"
+          src={src || ""}
           height="30"
           width="30"
           alt='avatar'
