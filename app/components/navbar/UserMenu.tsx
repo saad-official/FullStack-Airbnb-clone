@@ -7,6 +7,7 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
+import useRentModal from "@/app/hooks/useRentModal";
 
 interface NavbarProps {
   currentUser?: User | null;
@@ -16,6 +17,7 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -25,7 +27,9 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
     if (!currentUser)
       return loginModal.onOpen();
 
-  }, [loginModal, currentUser]);
+    rentModal.onOpen();
+
+  }, [loginModal, currentUser, rentModal]);
 
   return (
     <div className="relative">
@@ -60,6 +64,8 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
                   <MenuItems onClick={() => {}} label="My Properties" />
 
                   <MenuItems onClick={() => {}} label="My Reservaion " />
+
+                  <MenuItems onClick={() => rentModal.onOpen()} label="Airbnb my home" />
 
                   <MenuItems onClick={() => signOut()} label="SignOut" />
                 </>
