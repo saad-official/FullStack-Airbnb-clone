@@ -9,7 +9,7 @@ interface AvatorType {
 const Avatar = ({src}: AvatorType) => {
   return (
       <Image
-          src={src || ""}
+      src={src || '/images/placeholder.jpg'}
           height="30"
           width="30"
           alt='avatar'
