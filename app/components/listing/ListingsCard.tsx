@@ -95,9 +95,8 @@ const ListingsCard = ({
 
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">${price}</div>
-
+          </div>
           {!reservation && <div className="font-light ">night</div>}
-
           {onAction && actionLabel && (
             <Button
               disabled={disabled}
@@ -106,7 +105,6 @@ const ListingsCard = ({
               onClick={handleCancel}
             />
           )}
-        </div>
       </div>
     </div>
   );
