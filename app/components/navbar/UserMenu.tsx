@@ -57,13 +57,13 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
             <>
               {currentUser ? (
                 <>
-                  <MenuItems onClick={() => router.push('trips')} label="My Trips" />
+                  <MenuItems onClick={() => router.push('/trips')} label="My Trips" />
 
                   <MenuItems onClick={() => {}} label="My Favorities" />
 
                   <MenuItems onClick={() => {}} label="My Properties" />
 
-                  <MenuItems onClick={() => {}} label="My Reservaion " />
+                  <MenuItems onClick={() => router.push('/reservation')} label="My Reservaion " />
 
                   <MenuItems
                     onClick={() => rentModal.onOpen()}

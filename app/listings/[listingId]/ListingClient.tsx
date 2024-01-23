@@ -82,8 +82,7 @@ const ListingClient = ({
       .then(() => {
         toast.success("Listing reserved");
         setDateRange(initialDateRange);
-        // Redirect to Refresh
-        router.refresh();
+        router.push('/trips');
       })
       .catch(() => toast.error("Something Went Wrong"))
       .finally(() => {
