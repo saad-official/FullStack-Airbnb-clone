@@ -64,7 +64,7 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
 
                   <MenuItems onClick={() => router.push('/favorites')} label="My Favorities" />
 
-                  <MenuItems onClick={() => {}} label="My Properties" />
+                  <MenuItems onClick={() => router.push('/properties')} label="My Properties" />
 
                   <MenuItems
                     onClick={() => router.push("/reservation")}

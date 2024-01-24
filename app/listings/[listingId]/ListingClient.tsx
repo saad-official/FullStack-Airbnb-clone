@@ -4,7 +4,7 @@ import ListingInfo from "@/app/components/listing/ListingInfo";
 import ListingReservation from "@/app/components/listing/ListingReservation";
 import { categories } from "@/app/components/navbar/Categories";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { SafeListing, SafeUser } from "@/app/types";
+import { SafeUser, ListingType } from "@/app/types";
 import { Range } from "react-date-range";
 import { Reservation } from "@prisma/client";
 import axios from "axios";
@@ -21,7 +21,7 @@ const initialDateRange = {
 
 interface ListingClientProps {
   reservations?: Reservation[];
-  listings: SafeListing & {
+  listings: ListingType & {
     user: SafeUser;
   };
   currentUser: SafeUser | null;
