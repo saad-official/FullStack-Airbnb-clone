@@ -22,7 +22,7 @@ const PropertiesClient = ({ listings, currentUser }: PropertiesClientProps) => {
       setDeletingId(id);
 
       axios
-        .delete(`/api/listings/${id}`)
+        .delete(`/api/listing/${id}`)
         .then(() => {
           toast.success("Listing Deleted");
           router.refresh();
