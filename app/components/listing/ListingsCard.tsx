@@ -15,7 +15,7 @@ interface ListingCardProps {
   disabled?: boolean;
   actionLabel?: string;
   actionId?: string;
-  currentUser?: SafeUser | null;
+  currentUser?: SafeUser | null | undefined;
 }
 
 const ListingsCard = ({
@@ -79,7 +79,7 @@ const ListingsCard = ({
           />
           <div className="absolute top-3 right-3">
             <HeartButton
-              currentUser={currentUser}
+              currentUser={currentUser ?? null}
               listingId={data?.id}
               key={data?.id}
             />

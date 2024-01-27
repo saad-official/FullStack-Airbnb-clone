@@ -39,6 +39,7 @@ const SearchModal = () => {
       dynamic(() => import("../Map"), {
         ssr: false,
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [location]
   );
 
@@ -133,7 +134,6 @@ const SearchModal = () => {
         <Calendar
           value={dateRange}
           onChange={(value) => setDateRange(value.selection)}
-            
         />
       </div>
     );
@@ -173,7 +173,6 @@ const SearchModal = () => {
       body={bodyContent}
       onClose={searchhModal.onClose}
       onSubmit={onSubmit}
-      //   secondaryActionLabel={secondaryLabel}
       title="Filters"
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
