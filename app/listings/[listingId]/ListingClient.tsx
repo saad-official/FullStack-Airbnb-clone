@@ -32,7 +32,6 @@ const ListingClient = ({
   listings,
   currentUser,
 }: ListingClientProps) => {
-  console.log("res", reservations);
   const loginModal = useLoginModal();
   const router = useRouter();
 
