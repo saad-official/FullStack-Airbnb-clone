@@ -6,42 +6,33 @@ import getReservation from "../actions/getReservation";
 import FavoritesClient from "./FavoritesClient";
 import getFavoriteListings from "../actions/getFavoriteListings";
 
-
 const FavoritesPage = async () => {
-const currentUser = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
-
-if(!currentUser){
-
+  if (!currentUser) {
     return (
-    <ClientOnly>
+      <ClientOnly>
+        <EmptyState title="UnAuthorize" subtitle="Please Login" />
+      </ClientOnly>
+    );
+  }
+  const listings = await getFavoriteListings();
+
+  if (listings.length === 0) {
+    return (
+      <ClientOnly>
         <EmptyState
-        title="UnAuthorize"
-        subtitle="Please Login"
+          title="No Favorites Found"
+          subtitle="Looks like you have no Favorites Listing"
         />
-    </ClientOnly>
-    )
-}
-const listings = await getFavoriteListings();
+      </ClientOnly>
+    );
+  }
 
-if(listings.length === 0){
-    return (
-        <ClientOnly>
-            <EmptyState title="No Favorites Found"
-            subtitle="Looks like you have no Favorites Listing"
-            />
-        </ClientOnly>
-    )
-}
-
-
-
-return (
+  return (
     <ClientOnly>
-        <FavoritesClient listings={listings} currentUser={currentUser} />
+      <FavoritesClient listings={listings} currentUser={currentUser} />
     </ClientOnly>
-)
-
-
-} 
-export default FavoritesPage
+  );
+};
+export default FavoritesPage;

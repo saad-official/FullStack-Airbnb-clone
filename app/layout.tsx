@@ -24,7 +24,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
-  console.log("s", currentUser);
   return (
     <html lang="en">
       <body className={nunito.className}>
@@ -36,9 +35,7 @@ export default async function RootLayout({
           <SearchModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
-        <div className="pb-20 pt-28 ">
-        {children}
-        </div>
+        <div className="pb-20 pt-28 ">{children}</div>
       </body>
     </html>
   );

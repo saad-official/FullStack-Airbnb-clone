@@ -10,10 +10,13 @@ import ListingsCard from "../components/listing/ListingsCard";
 
 interface ReservationsClientProps {
   reservations: ReservationType[];
-  currentUser?: SafeUser[] | null;
+  currentUser?: SafeUser | null;
 }
 
-const ReservationsClient = ({ reservations, currentUser }: ReservationsClientProps) => {
+const ReservationsClient = ({
+  reservations,
+  currentUser,
+}: ReservationsClientProps) => {
   const router = useRouter();
   const [deletingId, setDeletingId] = useState("");
 

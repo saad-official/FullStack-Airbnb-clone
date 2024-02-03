@@ -10,7 +10,7 @@ import ListingsCard from "../components/listing/ListingsCard";
 
 interface PropertiesClientProps {
   listings: ListingType[];
-  currentUser?: SafeUser[] | null;
+  currentUser?: SafeUser | null;
 }
 
 const PropertiesClient = ({ listings, currentUser }: PropertiesClientProps) => {

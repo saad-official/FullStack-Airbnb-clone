@@ -10,7 +10,7 @@ import ListingsCard from "../components/listing/ListingsCard";
 
 interface FavoritesClientProps {
   listings: ListingType[];
-  currentUser?: SafeUser[] | null;
+  currentUser?: SafeUser | null;
 }
 
 const FavoritesClient = ({ listings, currentUser }: FavoritesClientProps) => {
