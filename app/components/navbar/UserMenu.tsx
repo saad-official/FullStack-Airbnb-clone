@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import MenuItems from "./MenuItems";
@@ -21,8 +21,18 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
   const rentModal = useRentModal();
   const router = useRouter();
 
-  const toggleOpen = useCallback(() => {
-    setIsOpen((value) => !value);
+  useEffect(() => {
+    const closeMenu = () => setIsOpen(false);
+
+    window.addEventListener("click", closeMenu);
+
+    return () => window.removeEventListener("click", closeMenu);
+  }, []);
+
+  const toggleOpen = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.stopPropagation();
+      setIsOpen((prev) => !prev);
   }, []);
 
   const onRent = useCallback(() => {
@@ -31,8 +41,9 @@ const UserMenu = ({ currentUser }: NavbarProps) => {
     rentModal.onOpen();
   }, [loginModal, currentUser, rentModal]);
 
+
   return (
-    <div className="relative">
+    <div  className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"

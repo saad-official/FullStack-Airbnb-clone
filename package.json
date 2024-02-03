@@ -13,6 +13,7 @@
     "@prisma/client": "^5.6.0",
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
+    "clsx": "^2.1.0",
     "date-fns": "^3.0.6",
     "leaflet": "^1.9.4",
     "next": "14.0.3",
@@ -28,6 +29,7 @@
     "react-leaflet": "^4.2.1",
     "react-select": "^5.8.0",
     "react-spinners": "^0.13.8",
+    "tailwind-merge": "^2.2.1",
     "world-countries": "^5.0.0",
     "zustand": "^4.4.6"
   },
