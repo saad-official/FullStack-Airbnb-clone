@@ -66,8 +66,14 @@ const Model = ({
   }
 
   return (
-    <div onClick={handleClose} className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800/70">
-      <div onClick={stopClickEventBubling} className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-full lg:h-auto md:h-auto">
+    <div
+      onClick={handleClose}
+      className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800/70"
+    >
+      <div
+        onClick={stopClickEventBubling}
+        className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-full lg:h-auto md:h-auto"
+      >
         {/* Content  */}
         <div
           className={`translate duration-300 h-full ${
@@ -95,9 +101,13 @@ const Model = ({
             {/* Footer */}
             <div className="flex flex-col gap-2 p-6">
               <div className="flex flex-row items-center gap-4 w-full">
-                
                 {secondaryAction && secondaryActionLabel && (
-                  <Button outline disabled={disabled}  onClick={handleSecondaryAction} label={secondaryActionLabel} />
+                  <Button
+                    outline
+                    disabled={disabled}
+                    onClick={handleSecondaryAction}
+                    label={secondaryActionLabel}
+                  />
                 )}
 
                 <Button onClick={handleSubmit} label={actionLabel} />

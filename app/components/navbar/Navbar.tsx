@@ -17,7 +17,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
   return (
     <div className='fixed w-full shadow-sm bg-white z-10'>
      
-      <div className="py-4 border-b[1px]">
+      <div className="py-4 border-b-[1px]">
         <Container>
           <div className="flex flex-row item-center justify-between gap-3 md:gap-0">
             <Logo />

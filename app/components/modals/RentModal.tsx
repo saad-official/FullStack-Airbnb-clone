@@ -4,7 +4,12 @@ import { useMemo, useState } from "react";
 import Heading from "../Heading";
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
-import { FieldValue, FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import {
+  FieldValue,
+  FieldValues,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
 import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Model from "./Model";
@@ -83,29 +88,31 @@ const RentModal = () => {
     setStep((value) => value + 1);
   };
 
-  const onSubmit : SubmitHandler<FieldValues> = (data) => {
-
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step !== STEPS.PRICE) {
       return onNext();
     }
 
     setIsLoading(true);
 
-    axios.post('/api/listing', data)
+    axios
+      .post("/api/listing", data)
       .then(() => {
         toast.success("Listing Created");
         router.refresh();
         reset();
         setStep(STEPS.CATEGORY);
         rentModal.onClose();
-      }).catch(() => {
+      })
+      .catch(() => {
         toast.error("Something Went Wrong");
-      }).finally(() => {
+      })
+      .finally(() => {
         setIsLoading(false);
-    })
+      });
 
     console.log("data", data);
-  }
+  };
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.PRICE) {

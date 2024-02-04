@@ -18,7 +18,7 @@ export default async function getListingsById(params: IParams) {
 
     if (!listing) return null;
 
-   return listing;
+    return listing;
   } catch (error: any) {
     throw new Error(error);
   }

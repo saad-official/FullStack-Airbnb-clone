@@ -32,20 +32,20 @@ const LoginModal = () => {
   });
 
   const handleClick = useCallback(() => {
-    loginModal.onClose()
+    loginModal.onClose();
     registerModal.onOpen();
-  }, [loginModal, registerModal])
+  }, [loginModal, registerModal]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    signIn('credentials', {
+    signIn("credentials", {
       ...data,
-      redirect:false
+      redirect: false,
     }).then((callback) => {
       setIsLoading(false);
 
       if (callback?.ok) {
-        toast.success("Logged In")
+        toast.success("Logged In");
         router.refresh();
         loginModal.onClose();
       }
@@ -53,14 +53,13 @@ const LoginModal = () => {
       if (callback?.error) {
         toast.error(callback.error);
       }
-
-    })
+    });
   };
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome Back" subtitle="Login to Your Account"  />
-      
+      <Heading title="Welcome Back" subtitle="Login to Your Account" />
+
       <Input
         id="email"
         type="email"
@@ -71,7 +70,6 @@ const LoginModal = () => {
         register={register}
       />
 
-      
       <Input
         id="password"
         type="password"
@@ -98,20 +96,20 @@ const LoginModal = () => {
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => signIn('github')}
-          />
-          
-          <div className="text-neutral-500 text-center mt-4 font-light">
-              <div className="justify-center flex flex-row items-center gap-2">
-                  <div>
-                      First Time using Airbnb?
-                  </div>
-                  <div onClick={handleClick} className="text-neutral-800 cursor-pointer hover:underline">
-                      Create an Account
-                  </div>
-              </div>
-          </div>
+        onClick={() => signIn("github")}
+      />
 
+      <div className="text-neutral-500 text-center mt-4 font-light">
+        <div className="justify-center flex flex-row items-center gap-2">
+          <div>First Time using Airbnb?</div>
+          <div
+            onClick={handleClick}
+            className="text-neutral-800 cursor-pointer hover:underline"
+          >
+            Create an Account
+          </div>
+        </div>
+      </div>
     </div>
   );
 
