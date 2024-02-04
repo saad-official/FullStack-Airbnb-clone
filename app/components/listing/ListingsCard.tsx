@@ -72,6 +72,7 @@ const ListingsCard = ({
         <div className="aspect-square w-full relative overflow-hidden rounded-xl">
           <img
             alt="Listing"
+            loading="lazy"
             src={data?.imageSrc}
             width={100}
             height={100}
