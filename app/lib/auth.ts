@@ -3,6 +3,7 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
+import prisma from "@/app/libs/prismadb";
 
 export const authOptions: NextAuthOptions = {
   providers: [
